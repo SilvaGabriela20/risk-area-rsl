@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->decimal('latitude', 10, 7);
-            $table->decimal('longitude', 10, 7);
+            $table->json('polygon');
             $table->string('risk_type');
             $table->integer('severity_level');
             $table->timestamps();

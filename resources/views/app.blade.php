@@ -16,9 +16,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/risk-areas') }}">Risk Areas</a>
+                        <a class="nav-link" href="{{ url('/risk-areas') }}">Áreas de Risco</a>
                     </li>
-                    <!-- Adicione mais itens de navegação conforme necessário -->
                 </ul>
             </div>
         </div>

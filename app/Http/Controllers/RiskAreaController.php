@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RiskArea;
+use App\Enums\RiskType;
 
 class RiskAreaController extends Controller
 {
@@ -20,18 +21,17 @@ class RiskAreaController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'latitude' => 'required|numeric',
-            'longitude' => 'required|numeric',
-            'risk_type' => 'required|string',
-            'severity_level' => 'required|integer',
+            'polygon' => 'required|string',
+            'risk_type' => ['required', 'in:' . implode(',', RiskType::getValues())],
+            'severity_level' => 'required|integer|min:1|max:5',
         ]);
 
-        RiskArea::create($data);
+        RiskArea::create($validatedData);
 
-        return redirect('/risk-areas');
+        return redirect()->route('risk-areas.index')->with('success', 'Área de Risco cadastrada com sucesso.');
     }
 
     public function show($id)
@@ -51,8 +51,7 @@ class RiskAreaController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'latitude' => 'required|numeric',
-            'longitude' => 'required|numeric',
+            'polygon' => 'required|string',
             'risk_type' => 'required|string',
             'severity_level' => 'required|integer',
         ]);

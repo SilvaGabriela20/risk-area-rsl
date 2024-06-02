@@ -12,8 +12,7 @@ class RiskArea extends Model
     protected $fillable = [
         'name',
         'description',
-        'latitude',
-        'longitude',
+        'polygon',
         'risk_type',
         'severity_level',
     ];
