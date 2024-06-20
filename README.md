@@ -1,66 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Mapeamento de Áreas de Risco
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descrição do Projeto
 
-## About Laravel
+O Sistema de Mapeamento de Áreas de Risco é uma aplicação web projetada para identificar, mapear e alertar sobre áreas de risco em uma comunidade. Utilizando tecnologias modernas de mapeamento e notificações em tempo real, o sistema visa a prevenção e a mitigação de desastres naturais, como deslizamentos, enchentes e outros eventos adversos. Além disso, o sistema fornece informações educativas para aumentar a conscientização e a preparação da comunidade.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Funcionalidades Principais
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Mapeamento de Áreas de Risco
+- **Mapas Interativos:** Utilização de mapas interativos para identificar e marcar áreas de risco.
+- **Classificação de Riscos:** Classificação dos riscos por tipo (deslizamentos, enchentes, etc.) e nível de gravidade.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. Banco de Dados de Incidentes
+- **Histórico de Incidentes:** Manutenção de um histórico detalhado de incidentes de desastres naturais na região.
+- **Análise de Padrões:** Permite a visualização de ocorrências passadas para análise de padrões e tendências.
 
-## Learning Laravel
+### 3. Sistema de Alertas
+- **Notificações em Tempo Real:** Envio de notificações e alertas para os moradores das áreas afetadas via SMS, e-mail ou push notifications.
+- **Integração com Sistemas de Monitoramento:** Integração com sistemas de monitoramento meteorológico e geológico para alertas automáticos.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 4. Informações Educativas
+- **Materiais Educativos:** Disponibilização de materiais educativos sobre prevenção e preparação para desastres naturais.
+- **Guias de Ação:** Oferecimento de guias sobre como agir durante e após um desastre.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 5. Interface para Relatos de Usuários
+- **Relatos de Moradores:** Permite que moradores reportem situações de risco ou ocorrências de desastres.
+- **Atualização em Tempo Real:** Integração dos relatos no mapa para atualização em tempo real.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 6. Painel de Administração
+- **Gestão de Informações:** Fornecimento de uma interface para que autoridades locais e gestores do sistema possam adicionar, editar e remover informações sobre áreas de risco.
+- **Gerenciamento de Usuários:** Gestão dos dados dos usuários e configuração dos parâmetros dos alertas.
 
-## Laravel Sponsors
+## Tecnologias Utilizadas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Back-end
+- **Framework:** Laravel (PHP MVC)
+- **Banco de Dados:** MySQL ou PostgreSQL
 
-### Premium Partners
+### Front-end
+- **Framework:** Vue.js ou React.js
+- **Mapeamento:** Leaflet.js ou Google Maps API para mapas interativos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Serviços de Notificação
+- **SMS:** Twilio ou Nexmo
+- **E-mail:** SendGrid ou Amazon SES
+- **Push Notifications:** Firebase Cloud Messaging
 
-## Contributing
+### Monitoramento e Integrações
+- **Meteorológico:** APIs de serviços como OpenWeatherMap ou NOAA
+- **Geológico:** APIs de serviços como USGS (United States Geological Survey)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Etapas do Desenvolvimento
 
-## Code of Conduct
+### 1. Planejamento
+- **Definição de Requisitos:** Definir requisitos detalhados com a comunidade e autoridades locais.
+- **Plano de Projeto:** Criar um plano de projeto com cronograma e marcos.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 2. Design
+- **Wireframes e Protótipos:** Desenvolver wireframes e protótipos da interface do usuário.
+- **Usabilidade e Acessibilidade:** Garantir a usabilidade e acessibilidade do sistema.
 
-## Security Vulnerabilities
+### 3. Desenvolvimento
+- **Implementação do Back-end:** Implementar o back-end utilizando Laravel.
+- **Desenvolvimento da Interface do Usuário:** Desenvolver a interface do usuário com Vue.js ou React.js.
+- **Integração do Sistema:** Integrar o sistema de mapeamento e os serviços de notificação.
+- **Criação do Painel de Administração:** Criar o painel de administração e funcionalidades de gerenciamento.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Testes
+- **Testes Unitários e de Integração:** Realizar testes unitários e de integração.
+- **Testes com Usuários:** Testar o sistema com usuários da comunidade para garantir que atende às suas necessidades.
 
-## License
+### 5. Implementação
+- **Lançamento:** Lançar o sistema em um ambiente de produção.
+- **Treinamento:** Treinar as autoridades locais e a comunidade para a utilização do sistema.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Manutenção e Suporte
+- **Monitoramento:** Monitorar o sistema para garantir seu funcionamento contínuo.
+- **Atualizações:** Realizar atualizações e melhorias conforme necessário.
+
+## Instalação e Configuração
+
+### Pré-requisitos
+
+- PHP >= 7.4
+- Composer
+- Node.js
+- MySQL ou PostgreSQL
+
+### Passos para Instalação
+
+1. **Clonar o Repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/sistema-mapeamento-areas-risco.git
+   cd sistema-mapeamento-areas-risco
+   ```
+
+2. **Instalar Dependências do Back-end**
+   ```bash
+   composer install
+   ```
+
+3. **Instalar Dependências do Front-end**
+   ```bash
+   npm install
+   ```
+
+4. **Configurar o Banco de Dados**
+   - Copie o arquivo `.env.example` para `.env`
+   - Configure as variáveis de ambiente no arquivo `.env`
+   - Execute as migrações do banco de dados:
+     ```bash
+     php artisan migrate
+     ```
+
+5. **Iniciar o Servidor**
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
+
+## Uso
+
+### Mapeamento de Áreas de Risco
+
+1. **Acesse a Página de Mapas**
+   - Utilize a interface para navegar e identificar áreas de risco no mapa.
+   - Adicione marcadores e classifique os riscos.
+
+2. **Consulta de Incidentes**
+   - Acesse o histórico de incidentes para visualizar ocorrências passadas.
+   - Utilize filtros para análise de padrões e tendências.
+
+### Sistema de Alertas
+
+1. **Configuração de Alertas**
+   - Configure os parâmetros dos alertas no painel de administração.
+   - Integre com sistemas de monitoramento para alertas automáticos.
+
+2. **Envio de Notificações**
+   - Envie notificações em tempo real para os moradores via SMS, e-mail ou push notifications.
+
+### Informações Educativas
+
+1. **Acesse Materiais Educativos**
+   - Navegue pela seção de materiais educativos para obter informações sobre prevenção e preparação para desastres.
+
+2. **Guias de Ação**
+   - Utilize os guias de ação para saber como proceder durante e após um desastre.
+
+## Contribuição
+
+### Como Contribuir
+
+1. **Fork o Repositório**
+2. **Crie um Branch**
+   ```bash
+   git checkout -b feature/nova-funcionalidade
+   ```
+
+3. **Faça Commit das Suas Alterações**
+   ```bash
+   git commit -m 'Adiciona nova funcionalidade'
+   ```
+
+4. **Faça Push para o Branch**
+   ```bash
+   git push origin feature/nova-funcionalidade
+   ```
+
+5. **Abra um Pull Request**
+
+### Código de Conduta
+
+- Respeite todos os membros da comunidade.
+- Mantenha a comunicação clara e objetiva.
+- Siga as melhores práticas de codificação.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Autores
+
+- **Lucas Zambam** - *Desenvolvedor Principal* - (https://github.com/lucaszambam)
+- **Gabriela da Silva de Liz** - *Contribuições Especiais* - (https://github.com/SilvaGabriela20)
+- **Felipe Ern** - *Contribuições Especiais* - (https://github.com/colaborador2)
+
+
+## Considerações Finais
+
+Este projeto não só utiliza habilidades técnicas avançadas em desenvolvimento web, mas também tem um impacto social significativo ao melhorar a resiliência da comunidade frente a desastres naturais. É uma excelente oportunidade para aplicar conhecimentos de programação em um contexto prático e de grande relevância.
+
+Convidamos todos a contribuir para o desenvolvimento e aprimoramento deste sistema, visando sempre o benefício da comunidade e a promoção da segurança e da educação ambiental.
